@@ -1,0 +1,144 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>midiplayer</title>
+  <link rel="stylesheet" href="bootstrap.css">
+  <style>
+
+    input[type="range"] { vertical-align: bottom; margin-top: 6px; margin-right: 10px; }
+
+    /* positions */
+
+    #status {
+      height: 30px;
+    }
+
+    .control-row {
+      margin-bottom: 20px;
+    }
+
+    #scroll {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    #keys {
+      margin-top: 50px;
+      position: relative;
+      width: 1350px;
+      height: 200px;
+    }
+
+    #black_keys, #white_keys {
+      position: absolute;
+    }
+
+    #black_keys {
+      height: 0;
+      overflow-y: visible;
+    }
+
+    .black_key_off, .black_key_on, .white_key_off, .white_key_on, .sound_off, .sound_on {
+      float: left;
+      padding: 6px;
+      vertical-align: top;
+      -webkit-user-select: none;
+      border-style: outset;
+      border-width: 1px;
+    }
+
+    .sound_on, .sound_off {
+      height: 100px;
+      width: 90px;
+    }
+
+    .black_key_on, .black_key_off {
+      overflow-y: visible;
+      z-index: 1;
+      width: 54px;
+      margin-left: 27px;
+      margin-right: 27px;
+      height: 110px;
+    }
+
+    .white_key_on, .white_key_off {
+      height: 200px;
+      width: 88px;
+      margin-left: 1px;
+      margin-right: 1px;
+    }
+
+    .spacer, .half_spacer {
+      float: left;
+      height: 110px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .half_spacer {
+      width: 27px;
+    }
+
+    .spacer {
+      width: 45px;
+    }
+
+    /* colors */
+
+    .black_key_off, .black_key_on, .white_key_off, .white_key_on, .sound_off, .sound_on {
+      border-style: outset;
+    }
+
+    .sound_on {
+      background-color: #888;
+    }
+
+    .white_key_off {
+      background-color: #fff;
+    }
+
+    .white_key_on {
+      background-color: #eee;
+    }
+
+    .black_key_off {
+      background-color: #000;
+    }
+
+    .black_key_on {
+      background-color: #444;
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+
+  <h1>midiplayer</h1>
+
+  <div id="status"></div>
+
+  <div class="control-row">
+    <input id="volume" type="range" class="xlarge" min="0" max="100" /> Volume
+  </div>
+
+  <div class="input">
+    <div id="sounds"></div>
+  </div>
+
+  <div id="scroll">
+    <div id="keys">
+      <div id="white_keys"></div>
+
+      <div id="black_keys">
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<script src="midiplayer.js"></script>
+</body>
+</html>
